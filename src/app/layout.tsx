@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   title: "Alishba Naveed",
   description: "Alishba Naveed's Portfolio",
   icons: {
-    icon: "/favicon.png",
+    icon: "/favicon.png?v=2",
   }
 };
 
@@ -45,3 +45,5 @@ export default function RootLayout({
     </html>
   );
 }
+
+
