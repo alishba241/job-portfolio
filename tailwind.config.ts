@@ -8,9 +8,24 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      screens: {
+        'custom1024': '1024px', 
+      },
+      fontFamily: {
+        syne: ['var(--font-syne)'],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      keyframes:{
+        scroll:{
+          '0%': { transform: 'translateX(100%)' },
+        '100%': { transform: 'translateX(-100%)' },
+        },
+      },
+      animation: {
+        scroll: 'scroll 15s linear infinite',
       },
     },
   },

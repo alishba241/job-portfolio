@@ -2,26 +2,64 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+.nav-flip {
+  transition: transform 0.5s ease;
+  transform-style: preserve-3d;
+  cursor: pointer;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+.nav-flip:hover {
+  transform: rotateX(180deg);
+  color: #86efac; /* Tailwind's green-300 */
+}
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
   }
 }
 
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+.animate-marquee1 {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 20s linear infinite;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
   }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee2 {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: marquee 5s linear infinite;
+}
+
+@keyframes flipIcon {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(0deg);
+  }
+}
+
+.flip-on-hover {
+  animation: flipIcon 0.8s ease-in-out forwards;
+}
+
+
+html {
+  scroll-behavior: smooth;
 }
